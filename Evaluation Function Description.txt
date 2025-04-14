@@ -1,0 +1,30 @@
+Evaluation Function Explanation for Red-Blue Nim Game AI
+=========================================================
+Name: Sravan Kumar Nallani
+UTA ID:1002147954
+
+Introduction
+------------
+The Red-Blue Nim game AI utilizes a MinMax algorithm with Alpha-Beta pruning for decision-making. A crucial component of this algorithm is the evaluation function, which assesses the desirability of a game state from the AI's perspective. This document explains the reasoning behind the chosen evaluation function.
+
+Evaluation Function Design
+--------------------------
+The evaluation function is defined as follows:
+
+    score = 2 * piles[0] + 3 * piles[1];
+
+Where piles[0] represents the number of red marbles, and piles[1] represents the number of blue marbles. The function returns a score based on the current state of the game board.
+
+Reasoning
+---------
+1. *Scoring Based on Marble Count*: The primary rationale for the evaluation function is its direct correlation with the game's winning conditions. More marbles remaining means more options for the AI, enhancing its chances of winning. The function scores the game state based on the total value of marbles left, assigning 2 points for each red marble and 3 points for each blue marble.
+
+2. *Weighted Values*: The differing weights (2 for red and 3 for blue) reflect the strategic value of the marbles. Blue marbles are weighted more heavily because their removal can have a greater impact on the game's outcome, assuming a strategy where the AI might prioritize maintaining flexibility in moves or forcing the opponent into unfavorable positions.
+
+3. *Simplicity and Efficiency*: Given the computational constraints and the necessity for quick decision-making, the evaluation function is intentionally simplistic. It allows the AI to rapidly assess the game state without delving into overly complex calculations that might not significantly improve its performance for the added computational cost.
+
+4. *General Applicability*: This evaluation function is designed to be effective regardless of the game's version (standard or misère). It focuses on maintaining as many marbles as possible on the board, aligning with strategic play where the AI seeks to prolong the game and maximize its options.
+
+Conclusion
+----------
+The evaluation function forms the backbone of the AI's strategic decision-making in the Red-Blue Nim game. Its design emphasizes simplicity, strategic flexibility, and rapid assessment, suitable for the MinMax algorithm with Alpha-Beta pruning. Further refinements and strategic depth can be added to enhance AI competitiveness and adaptability.
